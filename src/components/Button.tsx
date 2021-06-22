@@ -1,20 +1,10 @@
-import { useState } from "react";
+import { ButtonHTMLAttributes } from "react"; // Importa todos os atributos que o button do HTML pode receber
+import '../styles/button.scss'
 
-type ButtonProps = {
-    text?: string; // A interrogação significa que a propriedade é opcional
-    children?: string; // Única propriedade do React que não podemos dar nome
-}
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>; // Tipagem do elemento do botão entre <>
 
 export function Button( props: ButtonProps ) {
-    //let counter = 0;
-    let [counter, setCounter] = useState(0)
-
-    function increment() {
-        setCounter(counter + 1);
-    }
     return(
-        <button onClick={increment}>
-            { counter }
-        </button>
+        <button className="button" {...props} /> // Spread operator
     )
 }
