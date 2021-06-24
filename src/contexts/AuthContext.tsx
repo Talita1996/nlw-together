@@ -43,7 +43,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
         return () => { // Sempre se descadastrar do event listener no final do useEffect
         unsubscribe();
         }
-    }, [])
+    }, []) // Dispara uma função sempre que uma informação mudar, mas se o array que se refere ao componente estiver vazio, a função só executa uma vez
 
     async function signInWithGoogle() {
         const provider = new firebase.auth.GoogleAuthProvider();
