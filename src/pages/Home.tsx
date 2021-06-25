@@ -36,6 +36,11 @@ export function Home() { // Todo componente deve iniciar com letra maiúscula pa
             return;
         }
 
+        if (roomRef.val().endedAt) {
+            alert('Room already closed.');
+            return;
+        }
+
         history.push( `/rooms/${ roomCode }` );
     }
 
